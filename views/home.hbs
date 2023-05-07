@@ -1,0 +1,29 @@
+<div class="mt-4">
+    <h2>DANH SACH</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Des</th>
+                <th scope="col">Link</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each blogs}}
+            <tr>
+                <th scope="row"></th>
+                <td>{{this.title}}</td>
+                <td>{{this.body}}</td>
+                <td><img src="{{this.image}}" alt="" class="img-fluid mx-auto d-block" style="max-width: 300px;"></td>
+                <td>
+                    <a href="/{{this._id}}" class="btn btn-primary">Edit</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+</div>
