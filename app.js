@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const path = require('path');
 const hbs = require('hbs');
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 //middleware
 app.use(express.json());
 
@@ -18,7 +21,7 @@ app.set('view options', { layout: 'layouts/main' });
 const blogRouter = require("./routes/BlogRoutes");
 app.use("/", blogRouter);
 
-app.listen(3000, ()=>{
+app.listen(3001, ()=>{
     console.log("Server is running on port 3000");
 });
 

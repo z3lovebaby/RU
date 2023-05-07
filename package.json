@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --timeout 10000",
-    "start": "nodemon app.js"
+    "start": "nodemon --inspect app.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
   "devDependencies": {
     "chai": "^4.3.7",
     "chai-http": "^4.3.0",
+    "hbs": "^4.2.0",
     "mocha": "^10.2.0",
     "nodemon": "^2.0.22"
   }

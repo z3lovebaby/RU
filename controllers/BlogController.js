@@ -1,5 +1,4 @@
 const blogService =require("../services/BlogService");
-const BlogModel = require("../models/Blog");
 
 exports.getAllBlogs = async (req, res) => {
     try{
@@ -29,9 +28,9 @@ exports.getBlogById = async (req, res) =>{
 };
 exports.updateBlog = async (req, res) =>{
     try{
-        console.log('id: '+req.body.title);
-        BlogModel.updateOne({_id:req.params.id},req.body)
-        .then(() => res.redirect('/'));
+        console.log('abc'+req.body);
+        const blog = await blogService.updateBlog(req.params.id,req.body);
+        res.redirect('/');
     }catch(err){
         res.status(500).json({error: err.message});
     }

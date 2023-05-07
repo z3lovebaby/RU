@@ -7,7 +7,8 @@ const {
 
 const router = express.Router();
 
+router.route("/:id").post(updateBlog);
+router.route("/:id").get(getBlogById);
 router.route("/").get(getAllBlogs);
-router.route("/:id").get(getBlogById).post(updateBlog);
 
 module.exports = router;
